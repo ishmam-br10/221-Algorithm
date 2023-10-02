@@ -69,14 +69,15 @@ for i in range(1, len(list3), 3):
         else:
             dictionary[k.strip()].append(ids[count].strip())
             count += 1
-    marks = []
+    marks = [] #{40: [7] , 50: [4, 9], 20:[3], 10: [2, 5, 1]} 
 
     for key in dictionary.keys():
-        marks.append(str(key))
-    as_sorter(marks)
+        marks.append(str(key)) # [40, 50, 20, 10]
+    as_sorter(marks) #[50, 40, 20, 10]
 
-    for m in marks:
-        sorted_ids = des_sorter(dictionary[str(m)])
+    for m in marks: # marks = [50, 40, 20, 10] 
+        #dictionary = {40: [7] , 50: [4, 9], 20:[3], 10: [2, 5, 1]} 
+        sorted_ids = des_sorter(dictionary[str(m)]) # # [4,9], 
         for k in sorted_ids:
             output.write(f"ID: {k} Mark: {m}" + '\n')
 
